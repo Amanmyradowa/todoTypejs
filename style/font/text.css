@@ -1,0 +1,19 @@
+.uppercase
+{
+  text-transform: uppercase;
+}
+
+.capitalize
+{
+  text-transform: capitalize;
+}
+
+.text-decoration
+{
+  text-decoration: line-through;
+}
+
+.user-select
+{
+  user-select: none;
+}

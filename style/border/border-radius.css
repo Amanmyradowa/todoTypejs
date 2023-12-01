@@ -1,0 +1,34 @@
+.rounded-8
+{
+  border-radius: 8px;
+}
+
+.rounded-50
+{
+  border-radius: 50%;
+}
+
+/* border-radius-left-top */
+
+.rounded-top-left
+{
+  border-top-left-radius: 20px;
+}
+
+/* border-radius-left-bottom */
+.rounded-bottom-left
+{
+  border-bottom-left-radius: 20px;
+}
+
+/* border-radius-right-top */
+.rounded-top-right
+{
+  border-top-right-radius: 20px;
+}
+
+/* border-radius-right-bottom */
+.rounded-bottom-right
+{
+  border-bottom-right-radius: 20px;
+}

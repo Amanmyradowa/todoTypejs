@@ -1,0 +1,53 @@
+/* left-right */
+
+.px-0
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.px-10
+{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.px-15
+{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.px-20
+{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* top-bottom */
+
+.py-0
+{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.py-10
+{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.py-15
+{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* padding-left */
+
+.p-left-20
+{
+  padding-left: 20px;
+}

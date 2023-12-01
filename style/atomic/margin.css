@@ -1,0 +1,55 @@
+.m-auto
+{
+  margin: 0 auto;
+}
+
+/* left-right */
+
+.mx-0
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mx-10
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* top-bottom */
+
+.my-0
+{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.my-10
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* top */
+.mt-15
+{
+  margin-top: 15px;
+}
+
+/* bottom */
+.mb-30
+{
+  margin-bottom: 30px;
+}
+
+/* left */
+.ml-15
+{
+  margin-left: 15px;
+}
+
+.ml-10
+{
+  margin-left: 10px;
+}

@@ -1,0 +1,53 @@
+/* atomic styles */
+@import './atomic/body.css';
+@import './atomic/height.css';
+@import './atomic/line-height.css';
+@import './atomic/margin.css';
+@import './atomic/padding.css';
+@import './atomic/shadow.css';
+@import './atomic/width.css';
+@import './atomic/outline.css';
+
+/* background styles */
+@import './background/background-color.css';
+
+/* border styles */
+@import'./border/border-color.css';
+@import'./border/border-radius.css';
+@import'./border/border-style.css';
+@import'./border/border-width.css';
+@import'./border/border.css';
+
+/* flex styles */
+@import'./flex/direction.css';
+@import'./flex/flex.css';
+@import'./flex/items.css';
+@import'./flex/justify.css';
+
+/* font-size */
+@import'./font/font-size.css';
+@import'./font/text.css';
+@import'./font/text-color.css';
+
+/* grid styles */
+@import'./grid/grid.css';
+
+/* image styles */
+@import'./image/object-fit.css';
+
+/* position styles */
+@import'./position/absolute.css';
+@import'./position/bottom.css';
+@import'./position/left.css';
+@import'./position/relative.css';
+@import'./position/right.css';
+@import'./position/top.css';
+@import'./position/z-index.css';
+
+/* variabless */
+@import'./variables/color.css';
+
+/* components */
+@import'./components/todo-row.css';
+@import'./components/icon.css';
+@import'./components/button.css';

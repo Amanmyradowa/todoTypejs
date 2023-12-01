@@ -1,0 +1,17 @@
+:root
+{
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-green: ;
+  --color-red: red;
+  --color-yellow: ;
+  --color-blue: #50bde8;
+  --color-gray: gray;
+  --color-brown: #f6eee1;
+
+  /* shadows */
+
+  --shadow-green: ;
+  --shadow-blue: ;
+  --shadow-red: ;
+}
