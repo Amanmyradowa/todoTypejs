@@ -79,19 +79,19 @@ function createTodoItem() {
   todoLeft.appendChild(text);
 
 
-  // const todoRight = document.createElement('div');
-  // todoLeft.setAttribute('class', 'todo__row-container__right');
-  // flexContainer.appendChild(todoRight);
+  const todoRight = document.createElement('div');
+  todoLeft.setAttribute('class', 'todo__row-container__right');
+  flexContainer.appendChild(todoRight);
 
-  // const iconRename = document.createElement('span');
-  // iconRename.setAttribute('class', 'rename icon');
-  // iconRename.innerHTML = data[0].rename;
-  // todoRight.appendChild(iconRename);
+  const iconRename = document.createElement('span');
+  iconRename.setAttribute('class', 'rename icon');
+  iconRename.innerHTML = data[0].rename;
+  todoRight.appendChild(iconRename);
 
-  // const iconDelete = document.createElement('span');
-  // iconDelete.setAttribute('class', 'delete icon ml-10');
-  // iconDelete.innerHTML = data[0].delete;
-  // todoRight.appendChild(iconDelete);
+  const iconDelete = document.createElement('span');
+  iconDelete.setAttribute('class', 'delete icon ml-10');
+  iconDelete.innerHTML = data[0].delete;
+  todoRight.appendChild(iconDelete);
 
 
 
@@ -99,11 +99,7 @@ function createTodoItem() {
   hr.setAttribute('class', 'width-90 h-1 bg-blue block m-auto mt-15');
   todoContent.appendChild(hr);
 
-
-
-
-
-
+  console.log();
 }
 
 
@@ -112,7 +108,13 @@ function addTask() {
     alert("U must write something!");
   } else {
     // todoItem.textContent = input.value;
-    createTodoItem()
+    createTodoItem();
   }
   input.value = "";
 }
+
+function log(c) {
+  console.log(c);
+}
+
+log('Hello')
