@@ -23,9 +23,6 @@ const data = [
 ]
 
 let todoRowContainer = document.querySelector('.todo__row-container');
-let doneDoNotIcon = document.getElementById("done-dont-icons");
-let doNotIcon = document.querySelector(".do-not");
-let done = document.querySelector(".done");
 let addBtn = document.getElementById("button");
 let input = document.getElementById("input");
 
@@ -36,8 +33,6 @@ function changeIcon() {
   done.classList.toggle("active");
   doNotIcon.classList.toggle("disactive");
 }
-
-addBtn.addEventListener("click", addTask);
 
 
 function createTodoItem() {
@@ -78,9 +73,11 @@ function createTodoItem() {
   text.setAttribute('id', 'todoItem');
   todoLeft.appendChild(text);
 
+  text.textContent = input.value;
+
 
   const todoRight = document.createElement('div');
-  todoLeft.setAttribute('class', 'todo__row-container__right');
+  todoLeft.setAttribute('class', 'todo__row-container__right flex items-center');
   flexContainer.appendChild(todoRight);
 
   const iconRename = document.createElement('span');
@@ -93,13 +90,10 @@ function createTodoItem() {
   iconDelete.innerHTML = data[0].delete;
   todoRight.appendChild(iconDelete);
 
-
-
   const hr = document.createElement('span');
   hr.setAttribute('class', 'width-90 h-1 bg-blue block m-auto mt-15');
   todoContent.appendChild(hr);
 
-  console.log();
 }
 
 
@@ -107,14 +101,9 @@ function addTask() {
   if (input.value === "") {
     alert("U must write something!");
   } else {
-    // todoItem.textContent = input.value;
     createTodoItem();
   }
   input.value = "";
 }
 
-function log(c) {
-  console.log(c);
-}
-
-log('Hello')
+addBtn.addEventListener("click", addTask);
