@@ -90,11 +90,13 @@ function createTodoItem() {
 
 todoRowContainer.addEventListener('click', function(event) {
 
-  let todoItem = event.target.id === 'todoItem';
-  console.log(todoItem);
+  let todoItem = event.target.closest('#todoItem');
 
-  if(event.target.id === 'do-not' && todoItem) {
-    // todoItem.classList.toggle('text-decoration');
+  
+  if(event.target.id === 'do-not') {
+
+    todoItem.classList.toggle('text-decoration');
+
   }
 
 })
