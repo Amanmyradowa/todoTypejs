@@ -22,9 +22,6 @@ let addBtn = document.getElementById("button");
 let input = document.getElementById("input");
 
 
-// doneDoNotIcon.addEventListener("click", changeIcon);
-
-
 
 function createTodoItem() {
   
@@ -46,6 +43,7 @@ function createTodoItem() {
 
   const iconsCon = document.createElement('div');
   iconsCon.setAttribute('id', 'done-dont-icons');
+  iconsCon.addEventListener('click',()=>{active(text, iconDoneCon, iconDontCon)});
   todoLeft.appendChild(iconsCon);
 
   const iconDoneCon = document.createElement('span');
@@ -53,6 +51,7 @@ function createTodoItem() {
   iconDoneCon.setAttribute('id', 'done');
   iconDoneCon.innerHTML = data[0].done;
   iconsCon.appendChild(iconDoneCon);
+
 
   const iconDontCon = document.createElement('span');
   iconDontCon.setAttribute('class', 'do-not w-30 h-30 border-gray border-solid rounded-50 border-2 icon');
@@ -74,7 +73,9 @@ function createTodoItem() {
 
   const iconRename = document.createElement('span');
   iconRename.setAttribute('class', 'rename icon');
+  iconRename.setAttribute('id', 'rename');
   iconRename.innerHTML = data[0].rename;
+  iconRename.addEventListener('click', ()=>{rename(iconRename, text)})
   todoRight.appendChild(iconRename);
 
   const iconDelete = document.createElement('span');
@@ -88,27 +89,67 @@ function createTodoItem() {
   
 }
 
-todoRowContainer.addEventListener('click', function(event) {
+function saveData() {
 
-  let todoItem = event.target.closest('#todoItem');
+  localStorage.setItem("data", todoRowContainer.innerHTML);
 
-  
-  if(event.target.id === 'do-not') {
+};
 
-    todoItem.classList.toggle('text-decoration');
+let btn = false;
+
+function active(el ,arg1, arg2) {
+
+  el.classList.toggle('text-decoration');
+
+  if(btn === false) {
+
+    btn = true;
+
+    arg1.classList.add('active');
+    arg2.classList.add('disactive');
+    
+  } else {
+
+    arg1.classList.remove('active');
+    arg2.classList.remove('disactive');
+
+    btn = false;
 
   }
 
-})
+}
 
 
 function addTask() {
+
   if (input.value === "") {
+
     alert("U must write something!");
+
   } else {
+
     createTodoItem();
+
   }
+
   input.value = "";
+
+  saveData();
 }
 
+function rename(rename, text) {
+
+  
+
+}
+
+
 addBtn.addEventListener("click", addTask);
+
+function showTask() {
+
+  todoRowContainer.innerHTML = localStorage.getItem("data");
+
+};
+
+showTask();
