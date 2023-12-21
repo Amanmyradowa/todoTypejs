@@ -59,28 +59,34 @@ function createTodoItem() {
   iconsCon.appendChild(iconDontCon);
 
 
-  const text = document.createElement('span');
-  text.setAttribute('class', 'ml-15 capitalize font-18 user-select');
+  const text = document.createElement('input');
+  text.setAttribute('class', 'ml-15 capitalize font-18 border bg-transparent outline-none');
   text.setAttribute('id', 'todoItem');
+  text.setAttribute('for', 'rename');
+  text.setAttribute('readonly', '');
   todoLeft.appendChild(text);
 
-  text.textContent = input.value;
+  text.value = input.value;
 
 
   const todoRight = document.createElement('div');
   todoLeft.setAttribute('class', 'todo__row-container__right flex items-center');
   flexContainer.appendChild(todoRight);
 
-  const iconRename = document.createElement('span');
+  const iconRename = document.createElement('label');
   iconRename.setAttribute('class', 'rename icon');
   iconRename.setAttribute('id', 'rename');
+  iconRename.setAttribute('name', 'rename');
   iconRename.innerHTML = data[0].rename;
-  iconRename.addEventListener('click', ()=>{rename(iconRename, text)})
+  iconRename.addEventListener('click', ()=>{rename(text)});
+  // iconRename.setAttribute('class', 'done w-30 h-30 border-2 border-gray border-solid rounded-50 justify-center items-center icon');
+  // iconRename.innerHTML = data[0].done;
   todoRight.appendChild(iconRename);
 
   const iconDelete = document.createElement('span');
   iconDelete.setAttribute('class', 'delete icon ml-10');
   iconDelete.innerHTML = data[0].delete;
+  iconDelete.addEventListener('click', ()=>{deleteRow(todoRowContainer, todoItemElement)});
   todoRight.appendChild(iconDelete);
 
   const hr = document.createElement('span');
@@ -137,9 +143,24 @@ function addTask() {
   saveData();
 }
 
-function rename(rename, text) {
 
-  
+function rename(text) {
+
+  if (text.readOnly) {
+
+    text.removeAttribute("readonly");
+
+  } else {
+
+    text.setAttribute("readonly", "readonly");
+
+  }
+
+}
+
+function deleteRow(row, row1) {
+
+  row.removeChild(row1);
 
 }
 
