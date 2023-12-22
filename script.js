@@ -28,6 +28,7 @@ function createTodoItem() {
   const todoItemElement = document.createElement('section');
   todoItemElement.setAttribute('class', 'todo__row-container-row bg-brown');
   todoRowContainer.appendChild(todoItemElement);
+  
 
   const todoContent = document.createElement('div');
   todoContent.setAttribute('class', 'w-full px-20 py-15');
@@ -36,6 +37,7 @@ function createTodoItem() {
   const flexContainer = document.createElement('div');
   flexContainer.setAttribute('class', 'flex justify-between items-center');
   todoContent.appendChild(flexContainer);
+  
 
   const todoLeft = document.createElement('div');
   todoLeft.setAttribute('class', 'todo__row-container__left items-center flex');
@@ -64,8 +66,7 @@ function createTodoItem() {
   text.setAttribute('id', 'todoItem');
   text.setAttribute('readonly', '');
   todoLeft.appendChild(text);
-
-  text.value = input.value;
+  text.setAttribute('value', input.value);
 
 
   const todoRight = document.createElement('div');
@@ -74,7 +75,7 @@ function createTodoItem() {
 
   const iconRename = document.createElement('label');
   iconRename.setAttribute('class', 'rename icon');
-  text.setAttribute('for', 'todoItem');
+  iconRename.setAttribute('for', 'todoItem');
   iconRename.setAttribute('name', 'rename');
   iconRename.innerHTML = data[0].rename;
   iconRename.addEventListener('click', ()=>{rename(text)});
@@ -167,6 +168,7 @@ function deleteRow(row, row1) {
 
 
 addBtn.addEventListener("click", addTask);
+
 
 function showTask() {
 
