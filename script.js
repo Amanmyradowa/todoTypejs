@@ -62,7 +62,6 @@ function createTodoItem() {
   const text = document.createElement('input');
   text.setAttribute('class', 'ml-15 capitalize font-18 border bg-transparent outline-none');
   text.setAttribute('id', 'todoItem');
-  text.setAttribute('for', 'rename');
   text.setAttribute('readonly', '');
   todoLeft.appendChild(text);
 
@@ -75,12 +74,10 @@ function createTodoItem() {
 
   const iconRename = document.createElement('label');
   iconRename.setAttribute('class', 'rename icon');
-  iconRename.setAttribute('id', 'rename');
+  text.setAttribute('for', 'todoItem');
   iconRename.setAttribute('name', 'rename');
   iconRename.innerHTML = data[0].rename;
   iconRename.addEventListener('click', ()=>{rename(text)});
-  // iconRename.setAttribute('class', 'done w-30 h-30 border-2 border-gray border-solid rounded-50 justify-center items-center icon');
-  // iconRename.innerHTML = data[0].done;
   todoRight.appendChild(iconRename);
 
   const iconDelete = document.createElement('span');
@@ -107,21 +104,21 @@ function active(el ,arg1, arg2) {
 
   el.classList.toggle('text-decoration');
 
-  if(btn === false) {
+  // if(btn === false) {
 
-    btn = true;
+  //   btn = true;
 
-    arg1.classList.add('active');
-    arg2.classList.add('disactive');
+  //   arg1.classList.add('active');
+  //   arg2.classList.add('disactive');
     
-  } else {
+  // } else {
 
-    arg1.classList.remove('active');
-    arg2.classList.remove('disactive');
+  //   arg1.classList.remove('active');
+  //   arg2.classList.remove('disactive');
 
-    btn = false;
+  //   btn = false;
 
-  }
+  // }
 
 }
 
@@ -156,11 +153,15 @@ function rename(text) {
 
   }
 
+  saveData();
+
 }
 
 function deleteRow(row, row1) {
 
   row.removeChild(row1);
+
+  saveData();
 
 }
 
