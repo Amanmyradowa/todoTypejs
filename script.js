@@ -93,35 +93,41 @@ function createTodoItem() {
   
 }
 
+
+function showTask() {
+
+  todoRowContainer.innerHTML = localStorage.getItem("data");
+
+  let deleteIcon = document.querySelector('.delete');
+  let todoItemElement = document.querySelector('.todo__row-container-row');
+
+  // if() {
+
+  // }
+
+  deleteIcon.addEventListener('click', function() {
+
+    localStorage.removeItem('data');
+
+    todoRowContainer.removeChild(todoItemElement);
+
+  });
+
+};
+
 function saveData() {
 
   localStorage.setItem("data", todoRowContainer.innerHTML);
 
 };
 
-let btn = false;
+
 
 function active(el ,arg1, arg2) {
 
   el.classList.toggle('text-decoration');
 
-  // if(btn === false) {
-
-  //   btn = true;
-
-  //   arg1.classList.add('active');
-  //   arg2.classList.add('disactive');
-    
-  // } else {
-
-  //   arg1.classList.remove('active');
-  //   arg2.classList.remove('disactive');
-
-  //   btn = false;
-
-  // }
-
-}
+};
 
 
 function addTask() {
@@ -169,11 +175,5 @@ function deleteRow(row, row1) {
 
 addBtn.addEventListener("click", addTask);
 
-
-function showTask() {
-
-  todoRowContainer.innerHTML = localStorage.getItem("data");
-
-};
 
 showTask();
