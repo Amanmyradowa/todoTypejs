@@ -1,24 +1,11 @@
-.icon
-{
-  cursor: pointer;
+.icon {
+    cursor: pointer;
 }
 
-.done
-{
-  display: none;
+.done {
+    display: none;
 }
 
-.done.active
-{
-  display: flex;
-}
-
-.do-not
-{
-  display: flex;
-}
-
-.do-not.disactive
-{
-  display: none;
+.do-not {
+    display: flex;
 }
